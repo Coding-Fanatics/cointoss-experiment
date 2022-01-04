@@ -59,6 +59,9 @@ counts = dict(l)
 x = counts.keys()
 y = counts.values()
 
+plt.xlabel("values")
+plt.ylabel("freaquency")
+
 plt.plot(x,y)
 
 plt.show()
