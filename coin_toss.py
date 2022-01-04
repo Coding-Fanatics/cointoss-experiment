@@ -1,46 +1,64 @@
 from random import randint as rand
 import matplotlib.pyplot as plt
+import numpy as np
+
+
 
 #creating a variable for number of coins
 global coins
-coins = int(input("number of coins you're using:"))
+global trial
+
+#taking input from the user
+
+coins = int(input("enter number of coins:"))
+trial = int(input("enter the number of trials:"))
 
 
 val = []
 counts = {}
 
+def coin_toss():
+  output = rand(0,1)
+  val.append(output)
 
-def count(n):
-    for i in range(n):
-        out = rand(0,coins)
-        val.append(out)
+def tosser():
+  for i in range(coins):
+    coin_toss()
 
 
- 
- 
-n = input("enter the number of trials:")
-n = int(n)
-count(n) 
 
-for value in val:
-      if value in counts:
-        counts[value] += 1
-      else:
-        counts.update({value : 1})
-        
 
-#plotting the observerd freaquencies
+def counter():
+    global val
+    val = np.array(val)
+    value = val.sum()
+    if value in counts:
+      counts[value] += 1
+    else:
+      counts.update({value : 1})  
 
-#sorting the dictionary in ascending order
+    val = []        
+
+
+def start():
+  global trial
+
+
+  for i in range(trial):
+    tosser()
+    counter()
+
+  
+start()
+
 l = list(counts.items())
 l.sort()
-counts = dict(l)
+counts = dict(l)  
 
-#defining the x and y axis
+#plotting graph
 x = counts.keys()
 y = counts.values()
 
 plt.plot(x,y)
 
 plt.show()
-
