@@ -1,5 +1,14 @@
-# cointoss-experiment
-coin toss experiment physics experiment 2
+# Cointoss Experiment
+_______________________________________________________________
+
+## Coin Toss Web App
+______________________________________________________________________
+### How to use:
+
+*move the slider for desired amount of coins and number of trials
+*A graph of random distribution can be seen after pressing show graph
+______________________________________________________________________
 
 
-the coin toss web-app can be viewed from https://bit.ly/coin-toss-webapp
+### Web app for this experiment can be opened via the link:
+https://bit.ly/coin-toss-webapp
